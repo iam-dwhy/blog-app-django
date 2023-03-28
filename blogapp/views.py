@@ -1,9 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
-
-# Create your views here.
-
+import datetime
 
 
-def index(request):
-    return HttpResponse("Hello, world. my name is diya")
+
+def current_datetime(request):
+    now = datetime.datetime.now()
+    html = f"<html> <body> the current date and time is {now} </body></html>" # make the html better
+    return HttpResponse(html)
