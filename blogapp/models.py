@@ -6,7 +6,8 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     date = models.DateTimeField()
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    picture = models.ImageField()
+    picture = models.ImageField(blank=True)
+    content = models.TextField(null=True)
     
 
 
