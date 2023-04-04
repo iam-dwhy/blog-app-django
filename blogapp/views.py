@@ -1,15 +1,20 @@
 from django.http import HttpResponse
 import datetime
+from django.shortcuts import render
 
 
 
 def current_datetime(request):
     now = datetime.datetime.now()
-    html = f"<html> <body style='color: red';> the current date and time of this blogpost is {now} </body></html>" # make the html better
-    return HttpResponse(html, status=201)
+
+    context = {
+        'date': now,
+        'name': "diya"
+    }
+
+    return render(request, 'index.html', context)
 
 
 
 def get_blogs(request):
-
-    return HttpResponse('No Blog ', status=404)
+    return render(request, 'blogs.html')
