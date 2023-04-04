@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head> <title> All Blogs </title> </head>
+
+    <body>
+        
+        
+        {% for i in blogs %}
+
+        <li>
+
+           <h3>{{ i.title }}</h3> 
+
+           {{ i.content }} <a href="/1"> read more </a>
+
+        </li>
+
+        {% endfor %}
+
+
+
+        <!-- <li>
+            <h3> First Blog</h3> 
+            this blog is about .... <a href="/1"> read more </a>
+        </li>
+        <li>
+            <h3> Second Blog</h3>
+            this blog is about .... <a href="/2">read more</a>
+        </li>
+
+        <li>
+            <h3> Third Blog</h3>
+            this blog is about .... <a href="/3"> read more</a>
+        </li> -->
+
+    </body>
+
+</html>

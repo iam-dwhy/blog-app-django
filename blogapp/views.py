@@ -1,7 +1,6 @@
-from django.http import HttpResponse
 import datetime
 from django.shortcuts import render
-
+from .models import Blog
 
 
 def current_datetime(request):
@@ -17,4 +16,10 @@ def current_datetime(request):
 
 
 def get_blogs(request):
-    return render(request, 'blogs.html')
+    # get all the blogs from our database
+    blogs = Blog.objects.all()
+    context = {
+        'blogs': blogs
+    }
+
+    return render(request, 'blog_all.html', context)
