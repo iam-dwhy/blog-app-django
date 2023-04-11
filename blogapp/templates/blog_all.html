@@ -5,13 +5,17 @@
     <body>
         
         
-        {% for i in blogs %}
+        {% for blog in blogs %}
 
         <li>
 
-           <h3>{{ i.title }}</h3> 
+           <h3>{{ blog.title }}</h3> 
 
-           {{ i.content }} <a href="/1"> read more </a>
+           {{ blog.content }} <a href="/1"> read more </a>
+
+           <h4> {{ blog.date }}</h4>
+
+           <h5> {{blog.admin}} </h5>
 
         </li>
 
