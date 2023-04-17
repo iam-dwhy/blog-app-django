@@ -3,11 +3,17 @@ from django.conf import settings
 
 # Create your models here.
 class Blog(models.Model):
+    CATEGORY = (
+        ('Finance', 'Finance'),
+        ('Tech', 'Tech'),
+        ('Entertainment', 'Entertainment')
+    )
     title = models.CharField(max_length=200)
     date = models.DateTimeField()
     admin = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     picture = models.ImageField(blank=True)
     content = models.TextField(null=True)
+    category = models.CharField(choices=CATEGORY, max_length=15, null=True, default='Entertainment')
 
     def __str__(self) -> str:
         return f"{self.title}"
