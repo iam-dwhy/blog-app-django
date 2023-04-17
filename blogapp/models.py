@@ -6,7 +6,10 @@ class Blog(models.Model):
     CATEGORY = (
         ('Finance', 'Finance'),
         ('Tech', 'Tech'),
-        ('Entertainment', 'Entertainment')
+        ('Entertainment', 'Entertainment'),
+        ('gossip', 'gossip'),
+        ('politics', 'politics'),
+        ('culture', 'culture')
     )
     title = models.CharField(max_length=200)
     date = models.DateTimeField()
