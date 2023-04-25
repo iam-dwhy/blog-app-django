@@ -82,6 +82,21 @@ DATABASES = {
     }
 }
 
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
+#         "LOCATION": r"C:\Users\USER\Documents\GitHub\student\blog-app-django",
+        
+#     }
+# }
+
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.redis.RedisCache",
+        "LOCATION": "redis://172.26.83.196:6379",
+         "TIMEOUT": 60,
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

@@ -3,7 +3,7 @@ from django.http import Http404
 from django.shortcuts import render
 from .models import Blog
 from django.views.decorators.http import require_http_methods
-from django.views.decorators.cache import cache_control
+from django.views.decorators.cache import cache_page
 
 
 
@@ -18,7 +18,7 @@ def current_datetime(request):
 
     return render(request, 'index.html', context)
 
-@cache_control()
+@cache_page(60 * 10)
 @require_http_methods(['GET'])
 # get all the blogs from our database
 def get_blogs(request):
@@ -30,7 +30,7 @@ def get_blogs(request):
 
     return render(request, 'blog_all.html', context)
 
-
+@cache_page(60 * 10)
 @require_http_methods(['GET', 'POST'])
 # this function gets a blog with ID
 def get_blog(request, pk):
